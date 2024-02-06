@@ -33,3 +33,6 @@
 
 # IDEs
 .vscode
+
+# Folders
+build
