@@ -12,6 +12,7 @@ void logger::success(const std::string message, bool newline) {
     if (newline)
       std::cout << "\n";
   }
+  std::cout.flush();
 }
 
 void logger::info(const std::string message, bool newline) {
@@ -26,6 +27,7 @@ void logger::info(const std::string message, bool newline) {
     if (newline)
       std::cout << "\n";
   }
+  std::cout.flush();
 }
 
 void logger::warning(const std::string message, bool newline) {
@@ -40,6 +42,7 @@ void logger::warning(const std::string message, bool newline) {
     if (newline)
       std::cout << "\n";
   }
+  std::cout.flush();
 }
 
 void logger::error(const std::string message,
@@ -58,6 +61,7 @@ void logger::error(const std::string message,
       throw std::runtime_error(runtimeErrorMessage);
     }
   }
+  std::cout.flush();
 }
 
 std::string logger::getTime() {
