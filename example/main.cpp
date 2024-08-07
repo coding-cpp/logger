@@ -8,6 +8,7 @@ int main(int argc, char **argv) {
 
   logger::success("This is a success message");
   logger::info("This is an info message");
+  logger::debug("This is a debug message");
   logger::warning("This is a warning message");
   logger::error("This is an error message");
   // logger::error("This is an error message with a runtime error message",

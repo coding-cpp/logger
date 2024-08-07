@@ -13,6 +13,8 @@ void success(const std::string message, bool newline = true);
 
 void info(const std::string message, bool newline = true);
 
+void debug(const std::string message, bool newline = true);
+
 void warning(const std::string message, bool newline = true);
 
 void error(const std::string message,

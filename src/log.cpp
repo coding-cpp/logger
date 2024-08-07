@@ -30,6 +30,21 @@ void logger::info(const std::string message, bool newline) {
   std::cout.flush();
 }
 
+void logger::debug(const std::string message, bool newline) {
+  if (ENABLED) {
+    std::cout << getTime();
+    if (BEAUTIFY)
+      std::cout << MAGENTA;
+    std::cout << "[DEBUG]  ";
+    if (BEAUTIFY)
+      std::cout << RESET;
+    std::cout << ": " << message;
+    if (newline)
+      std::cout << "\n";
+  }
+  std::cout.flush();
+}
+
 void logger::warning(const std::string message, bool newline) {
   if (ENABLED) {
     std::cout << getTime();
