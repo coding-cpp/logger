@@ -1,6 +1,6 @@
 #include <logger/log.h>
 
-void logger::success(const std::string message, bool newline) {
+void logger::success(const std::string message, bool newline) noexcept(true) {
   if (ENABLED) {
     std::cout << getTime();
     if (BEAUTIFY)
@@ -15,7 +15,7 @@ void logger::success(const std::string message, bool newline) {
   std::cout.flush();
 }
 
-void logger::info(const std::string message, bool newline) {
+void logger::info(const std::string message, bool newline) noexcept(true) {
   if (ENABLED) {
     std::cout << getTime();
     if (BEAUTIFY)
@@ -30,7 +30,7 @@ void logger::info(const std::string message, bool newline) {
   std::cout.flush();
 }
 
-void logger::debug(const std::string message, bool newline) {
+void logger::debug(const std::string message, bool newline) noexcept(true) {
   if (ENABLED) {
     std::cout << getTime();
     if (BEAUTIFY)
@@ -45,7 +45,7 @@ void logger::debug(const std::string message, bool newline) {
   std::cout.flush();
 }
 
-void logger::warning(const std::string message, bool newline) {
+void logger::warning(const std::string message, bool newline) noexcept(true) {
   if (ENABLED) {
     std::cout << getTime();
     if (BEAUTIFY)
@@ -61,7 +61,8 @@ void logger::warning(const std::string message, bool newline) {
 }
 
 void logger::error(const std::string message,
-                   const std::string runtimeErrorMessage, bool newline) {
+                   const std::string runtimeErrorMessage,
+                   bool newline) noexcept(false) {
   if (ENABLED) {
     std::cerr << getTime();
     if (BEAUTIFY)
@@ -79,7 +80,7 @@ void logger::error(const std::string message,
   std::cout.flush();
 }
 
-std::string logger::getTime() {
+std::string logger::getTime() noexcept(true) {
   if (!SHOW_TIME)
     return "";
 
