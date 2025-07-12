@@ -73,9 +73,9 @@ void logger::error(const std::string message,
     std::cerr << ": " << message;
     if (newline)
       std::cerr << "\n";
-    if (runtimeErrorMessage != "") {
-      throw std::runtime_error(runtimeErrorMessage);
-    }
+  }
+  if (runtimeErrorMessage != "") {
+    throw std::runtime_error(runtimeErrorMessage);
   }
   std::cout.flush();
 }
